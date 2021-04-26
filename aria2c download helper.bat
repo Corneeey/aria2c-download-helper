@@ -100,7 +100,6 @@
 			echo %pathToAria2cExe% --file-allocation=none --seed-ratio=%seedRatio% %magnet%> "Resume Download %date% %time::=.%.bat"
 		)
 	)
-	pause
 
 :: starts the download
 :Download
