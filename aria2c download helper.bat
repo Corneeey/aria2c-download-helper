@@ -92,19 +92,19 @@
 :CreateResumeDownloadFile
 	set magnet="%magnet:"=%"
 	if not exist "%cd%\Resume Download.bat" (
-		echo %pathToAria2cExe% --file-allocation=none --seed-ratio=%seedRatio% %magnet%> "Resume Download.bat"
+		echo %pathToAria2cExe% --file-allocation=none --seed-ratio=%seedRatio% --force-save=true %magnet%> "Resume Download.bat"
 	) else (
 		if not exist "%cd%\Resume Download %date%.bat" (
-			echo %pathToAria2cExe% --file-allocation=none --seed-ratio=%seedRatio% %magnet%> "Resume Download %date%.bat"
+			echo %pathToAria2cExe% --file-allocation=none --seed-ratio=%seedRatio% --force-save=true %magnet%> "Resume Download %date%.bat"
 		) else (
-			echo %pathToAria2cExe% --file-allocation=none --seed-ratio=%seedRatio% %magnet%> "Resume Download %date% %time::=.%.bat"
+			echo %pathToAria2cExe% --file-allocation=none --seed-ratio=%seedRatio% --force-save=true %magnet%> "Resume Download %date% %time::=.%.bat"
 		)
 	)
 
 :: starts the download
 :Download
 	cls
-	%pathToAria2cExe% --file-allocation=none --seed-ratio=%seedRatio% %magnet%
+	%pathToAria2cExe% --file-allocation=none --seed-ratio=%seedRatio% --force-save=true %magnet%
 
 :: exits the script. all code after this won't be called by default.
 :Exit
